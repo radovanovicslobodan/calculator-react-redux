@@ -8,11 +8,11 @@ export const historyItemClickHandler = dispatch => history => {
   dispatch(toggleHistory());
 };
 
-const MapsDispatchToProps = dispatch => ({
+const MapDispatchToProps = dispatch => ({
   historyItemClickHandler: historyItemClickHandler(dispatch),
   toggleHistory: () => dispatch(toggleHistory())
 });
 export default connect(
   null,
-  MapsDispatchToProps
+  MapDispatchToProps
 )(HistoryView);

@@ -7,10 +7,12 @@ export const digitClickHandler = numberClicked => (dispatch, getState) => {
   dispatch(digitClick(numberClicked));
   dispatch(updateHistory(getState().curExpression));
 };
-const MapsDispatchToProps = dispatch => ({
+
+const MapDispatchToProps = dispatch => ({
   digitClickHandler: numberClicked => dispatch(digitClickHandler(numberClicked))
 });
+
 export default connect(
   null,
-  MapsDispatchToProps
+  MapDispatchToProps
 )(DigitsView);
