@@ -5,14 +5,22 @@ export const History = ({
   showHistory,
   history,
   toggleHistory,
-  historyItemClickHandler
+  historyItemClickHandler,
+  historyItemButtonClassName = "block transparent",
+  closeButtonText = "+",
+  closeButtonClassName = "toggle-close",
+  className = "history"
 }) => (
-  <section className={`history ${showHistory ? "visible" : ""}`}>
-    <Button text="+" clickHandler={toggleHistory} buttonClass="toggle-close" />
+  <section className={`${className} ${showHistory ? "visible" : ""}`}>
+    <Button
+      text={closeButtonText}
+      clickHandler={toggleHistory}
+      buttonClass={closeButtonClassName}
+    />
     {history.map((mem, i) => (
       <Button
         key={i}
-        buttonClass="block transparent"
+        buttonClass={historyItemButtonClassName}
         text={mem}
         clickHandler={historyItemClickHandler}
       />
